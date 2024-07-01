@@ -6,7 +6,7 @@ from Crypto.Util.Padding import pad
 # Encode the cp-logo.bmp file using AES in ECB mode
 def encode_ecb(plaintext_file, key=None):
     if key is None:
-        key = get_random_bytes(16)
+        key = get_random_bytes(8)
     cipher = AES.new(key, AES.MODE_ECB)
     with open(plaintext_file, 'rb') as f:
         data = f.read()
